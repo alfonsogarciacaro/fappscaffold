@@ -18,12 +18,14 @@ var Json = exports.Json = function ($exports) {
 var Args = exports.Args = function ($exports) {
   var toString = $exports.toString = function (arg) {
     return function () {
-      var clo1;
-      return clo1 = _fableCore.String.fsFormat("%O")(function (x) {
-        return x;
-      }), function (arg10) {
-        return clo1(arg10);
-      };
+      return function () {
+        var clo1;
+        return clo1 = _fableCore.String.fsFormat("%O")(function (x) {
+          return x;
+        }), function (arg10) {
+          return clo1(arg10);
+        };
+      }();
     }()(arg);
   };
 

@@ -1,23 +1,32 @@
 "use strict";
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.create = exports.createUnsafeTyped = exports.createUnsafeWith = exports.createTyped = exports.createWith = undefined;
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var _Observable = require("FuseJS/Observable");
 
-var Globals = function () {
-  function Globals() {
-    _classCallCheck(this, Globals);
-  }
+var _Observable2 = _interopRequireDefault(_Observable);
 
-  _createClass(Globals, null, [{
-    key: "observable",
-    get: function () {
-      throw "JS only";
-    },
-    set: function (v) {
-      throw "JS only";
-    }
-  }]);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-  return Globals;
-}();
+var createWith = exports.createWith = function (elem) {
+  return (0, _Observable2.default)(elem);
+};
+
+var createTyped = exports.createTyped = function () {
+  return (0, _Observable2.default)();
+};
+
+var createUnsafeWith = exports.createUnsafeWith = function (elem) {
+  return (0, _Observable2.default)(elem);
+};
+
+var createUnsafeTyped = exports.createUnsafeTyped = function () {
+  return (0, _Observable2.default)();
+};
+
+var create = exports.create = function () {
+  return (0, _Observable2.default)();
+};
