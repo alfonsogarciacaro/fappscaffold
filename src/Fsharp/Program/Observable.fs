@@ -62,3 +62,6 @@ module Observable =
     // A problem has been found in Fable (to be fixed) if this function is not inlined
     let inline createList<'T> (elements : 'T array) = observable.InvokeList<'T>(elements)
     
+    let [<Emit("$1.map($0)")>] map<'T,'U> (f: 'T -> 'U) (x: IObservable<'T>): IObservable<'U> = failwith "JS only"
+    let [<Emit("$1.where($0)")>] where (f: 'T -> bool) (x: IObservable<'T>): IObservable<'T> = failwith "JS only"
+
