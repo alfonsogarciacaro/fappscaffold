@@ -44,6 +44,10 @@ module Module1 =
     // normal function call with two parameters
     let private obsU = obsZ.mapi(fun p idx -> p + (idx |> float))
 
+    // The F# lambda must be converted explicitly to a delegate for module functions
+    // let private obsU =
+    //     obsZ |> Observable.mapi (System.Func<_,_,_>(fun p idx -> p + (idx |> float))) 
+
     let buttonClicked args =     
         Console.log (Json.stringify args)
         //let x = Args.toString args?x

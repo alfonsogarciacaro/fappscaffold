@@ -64,4 +64,7 @@ module Observable =
     
     let [<Emit("$1.map($0)")>] map<'T,'U> (f: 'T -> 'U) (x: IObservable<'T>): IObservable<'U> = failwith "JS only"
     let [<Emit("$1.where($0)")>] where (f: 'T -> bool) (x: IObservable<'T>): IObservable<'T> = failwith "JS only"
-
+    
+    // This approach doesn't work well to pass functions of more than one argument
+    // because the conversion from F# lambda to delegate won't be one automatically
+    let [<Emit("$1.map($0)")>] mapi<'T,'U> (f: Func<'T,int,'U>) (x: IObservable<'T>): IObservable<'U> = failwith "JS only"
